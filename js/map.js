@@ -35,4 +35,15 @@ require(["esri/map",
 
         map.addLayer(dynamicMapServiceLayer3);
 
+        var dynamicMapServiceLayer4 = new ArcGISDynamicMapServiceLayer("http://maps.vbgov.com/ArcGISimap/rest/services/Administrative_Boundaries/MapServer", {
+            "opacity" : 1.0
+        });
+
+        map.addLayer(dynamicMapServiceLayer4);
+
+        var dynamicMapServiceLayer5 = new ArcGISDynamicMapServiceLayer("http://maps.vbgov.com/ArcGISimap/rest/services/Administrative_Boundaries/MapServer", {
+            "opacity" : 1.0
+        });
+
+        map.addLayer(dynamicMapServiceLayer5);
     });
