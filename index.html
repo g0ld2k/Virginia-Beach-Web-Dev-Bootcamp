@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>Simple Map</title>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.11/esri/css/esri.css">
+    <style>
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #FFF;
+            overflow: hidden;
+            font-family: "Trebuchet MS";
+        }
+    </style>
+    <script src="http://js.arcgis.com/3.11/"></script>
+    <script>
+        var map;
+
+
+        require(["esri/map",
+                    "esri/layers/ArcGISDynamicMapServiceLayer",
+                    "dojo/domReady!"],
+                function(Map,
+                         ArcGISDynamicMapServiceLayer) {
+
+                    //Turn of detection for CORS
+                    esriConfig.defaults.io.corsDetection = false;
+
+                    map = new Map("map", {
+                        basemap: "streets",
+                        center: [-76.09, 36.78], // longitude, latitude
+                        zoom: 11
+                    });
+
+                    var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("http://maps.vbgov.com/ArcGISimap/rest/services/Administrative_Boundaries/MapServer", {
+                        "opacity" : 1.0
+                    });
+
+                    map.addLayer(dynamicMapServiceLayer);
+
+                });
+    </script>
+</head>
+
+<body>
+<div id="map"></div>
+</body>
+</html>
