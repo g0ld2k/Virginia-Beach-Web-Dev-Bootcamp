@@ -10,3 +10,15 @@ body {
     overflow: hidden;
     font-family: "Trebuchet MS";
 }
+#HomeButton {
+    position: absolute;
+    top: 95px;
+    left: 20px;
+    z-index: 50;
+}
+#LocateButton {
+    position: absolute;
+    top: 135px;
+    left: 20px;
+    z-index: 50;
+}
