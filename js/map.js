@@ -9,8 +9,6 @@ var djConfig = {
     }
 };
 
-var map;
-
 require([
    //Map and Layers
     "esri/map",
@@ -53,6 +51,8 @@ require([
 
         parser
         ){
+
+        var map;
 
         //Turn of detection for CORS
         esriConfig.defaults.io.corsDetection = false;
